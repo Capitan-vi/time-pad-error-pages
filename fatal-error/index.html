@@ -4,10 +4,18 @@
 	<meta charset="UTF-8">
 	<title>Фатальная ошибка - TimePad</title>
 	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/plax.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('#main .plax').plaxify()
+			$.plax.enable()
+		})
+	</script>
 </head>
 
 <body>
-	<div class="b-main">
+	<div class="b-main" id="main">
 		<div class="b-main__content">
 			<a href="http://timepad.ru" class="b-main__link-logo"><img src="img/logo.png" alt=""></a>
 			<h1 class="b-main__heading">Фатальная ошибка</h1>
@@ -16,11 +24,11 @@
 			<p class="b-main__text">При обращении в службу поддержки укажите пожалуйста вот этот уникальный код ошибки: <span class="b-main__error-id">1400756526_07ccd9f957566483e44ab5af2569a8f2</span></p>
 		</div>
 		
-		<div class="cloud-small"></div>
-		<div class="cloud-middle"></div>
-		<div class="cloud-big"></div>
+		<div class="cloud-small plax" data-xrange="10" data-yrange="10" data-invert="true"></div>
+		<div class="cloud-middle plax" data-xrange="40" data-yrange="40"></div>
+		<div class="cloud-big plax" data-xrange="40" data-yrange="40"></div>
 		
-		<div class="nerpa"></div>
+		<div class="nerpa plax" data-xrange="20" data-yrange="20"></div>
 	</div>
 </body>
 </html>

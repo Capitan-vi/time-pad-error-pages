@@ -17,7 +17,7 @@ body{
 }
 
 body{
-	/*overflow: hidden;*/
+	overflow: hidden;
 	background-color: #599ccc;
 	font-family: "Helvetica Neue", Arial, sans-serif;
 	font-size: 18px;
@@ -37,7 +37,7 @@ body{
 			z-index: 5;
 			position: relative;
 			max-width: 450px;
-			background-color: #599ccc;
+			background-color: rgba(89, 156, 204, 0.6);
 		}
 
 			.b-main__link-logo{
