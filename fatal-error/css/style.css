@@ -11,12 +11,13 @@ a{
 
 html,
 body{
+	box-sizing: border-box;
 	width: 100%;
+	height: 100%;
 }
 
 body{
-	/*max-height: 768px;*/
-	overflow: hidden;
+	/*overflow: hidden;*/
 	background-color: #599ccc;
 	font-family: "Helvetica Neue", Arial, sans-serif;
 	font-size: 18px;
@@ -25,38 +26,97 @@ body{
 }
 
 	.b-main{
+		position: relative;
 		max-width: 900px;
+		height: 100%;
 		padding: 0 50px;
 		margin: 0 auto;
 	}
 
-		.b-main__link-logo{
-			display: inline-block;
-			margin: 75px 0;
+		.b-main__content{
+			z-index: 5;
+			position: relative;
+			max-width: 450px;
+			background-color: #599ccc;
 		}
 
-		.b-main__heading{
-			font-size: 2em;
-			line-height: 1.166em;
-			margin-bottom: 0.5em;
-		}
-
-		.b-main__text{
-			margin-bottom: 1em;
-		}
-
-			.b-main__mail-link{
-				color: #fafbaa;
+			.b-main__link-logo{
+				display: inline-block;
+				margin-top: 20px;
+				margin-bottom: 70px;
 			}
 
-				.b-main__mail-link:hover,
-				.b-main__mail-link:focus{
-					text-decoration: underline;
+			.b-main__heading{
+				font-size: 2em;
+				line-height: 1.166em;
+				margin-bottom: 0.4em;
+			}
+
+			.b-main__text{
+				margin-bottom: 0.95em;
+			}
+
+				.b-main__mail-link{
+					color: #fafbaa;
 				}
 
-				.b-main__error-id{
-					display: inline-block;
-					margin-top: 0.5em;
-					padding: 10px;
-					background-color: #508cb7;
-				}
+					.b-main__mail-link:hover,
+					.b-main__mail-link:focus{
+						text-decoration: underline;
+					}
+
+					.b-main__error-id{
+						display: inline-block;
+						margin-top: 0.5em;
+						padding: 6px 10px;
+						background-color: #508cb7;
+						font-weight: bold;
+					}
+
+		.cloud-small{
+			z-index: 1;
+			position: absolute;
+			top: 3.731%;
+			right: 0.444%;
+			width: 136px;
+			height: 77px;
+			background-image: url(../img/cloud-small.png);
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+
+		.cloud-middle{
+			z-index: 2;
+			position: absolute;
+			top: 26.3%;
+			right: 28.5%;
+			width: 202px;
+			height: 116px;
+			background-image: url(../img/cloud-middle.png);
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+
+		.cloud-big{
+			z-index: 4;
+			position: absolute;
+			bottom: 1%;
+			left: 11%;
+			width: 327px;
+			height: 133px;
+			background-image: url(../img/cloud-big.png);
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+
+		.nerpa{
+			z-index: 3;
+			position: absolute;
+			top: 29.5%;
+			right: 0.5%;
+			width: 429px;
+			height: 464px;
+			background-image: url(../img/nerpa-heroy.png);
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
