@@ -7,17 +7,26 @@ a{
 	text-decoration: none;
 }
 
+img{
+	border: none;
+}
+
 
 
 html,
 body{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 	width: 100%;
+	height: 100%;
 }
 
 body{
-	position: relative;
+	position: fixed;
 	max-height: 670px;
 	overflow: hidden;
+	padding-top: 20px;
 	background-color: #3f3f3f;
 	font-family: "Helvetica Neue", Arial, sans-serif;
 	font-size: 18px;
@@ -28,11 +37,13 @@ body{
 
 	.strip{
 		position: absolute;
-		width: 100%;
 		height: 40px;
 		background-color: #f3de4d;
 		background-image: url('../img/pattern-strip.png');
 		background-position: 0 50%;
+		-webkit-background-size: contain;
+		-moz-background-size: contain;
+		-o-background-size: contain;
 		background-size: contain;
 		background-repeat: repeat-x;
 	}
@@ -54,13 +65,35 @@ body{
 		to { background-position: 183px 50%; }
 	}
 
+	@-moz-keyframes stip{
+		from { background-position: 0 50%; }
+		to { background-position: 183px 50%; }
+	}
+
+	@-o-keyframes stip{
+		from { background-position: 0 50%; }
+		to { background-position: 183px 50%; }
+	}
+
+	@keyframes stip{
+		from { background-position: 0 50%; }
+		to { background-position: 183px 50%; }
+	}
+
 	.strip_low{
 		z-index: -1;
 		width: 200%;
 		left: -50%;
 		top: -21px;
 		-webkit-transform: rotate(30deg);
+		-moz-transform: rotate(30deg);
+		-ms-transform: rotate(30deg);
+		-o-transform: rotate(30deg);
+		transform: rotate(30deg);
 		-webkit-animation: stip 27s infinite linear;
+		-moz-animation: stip 27s infinite linear;
+		-o-animation: stip 27s infinite linear;
+		animation: stip 27s infinite linear;
 	}
 
 	.strip_mid{
@@ -69,13 +102,30 @@ body{
 		left: -50%;
 		top: 374px;
 		-webkit-transform: rotate(-15deg);
+		-moz-transform: rotate(-15deg);
+		-ms-transform: rotate(-15deg);
+		-o-transform: rotate(-15deg);
+		transform: rotate(-15deg);
 		-webkit-animation: stip 20s infinite linear;
+		-moz-animation: stip 20s infinite linear;
+		-o-animation: stip 20s infinite linear;
+		animation: stip 20s infinite linear; 
 	}
 
+		@media all and (max-width: 980px) {
+			.strip_mid{
+				display: none;
+			}
+		}
+
 	.strip_high{
-		z-index: 5;
+		z-index: 2;
 		top: 433px;
+		width: 100%;
 		-webkit-animation: stip 10s infinite linear;
+		-moz-animation: stip 10s infinite linear;
+		-o-animation: stip 10s infinite linear;
+		animation: stip 10s infinite linear;
 	}
 
 
@@ -83,13 +133,14 @@ body{
 
 
 	.b-main{
-		width: 900px;
+		max-width: 900px;
 		padding: 0 50px;
 		margin: 0 auto;
-		margin-top: 20px;
 	}
 
 		.b-main__left-column{
+			z-index: 3;
+			position: relative;
 			float: left;
 			width: 61.111%;
 		}
@@ -98,8 +149,11 @@ body{
 				display: inline-block;
 				width: 255px;
 				height: 65px;
-				margin-bottom: 75px;
+				margin-bottom: 70px;
 				background-image: url(../img/logo.png);
+				-webkit-background-size: contain;
+				-moz-background-size: contain;
+				-o-background-size: contain;
 				background-size: contain;
 				background-repeat: no-repeat;
 			}
@@ -119,7 +173,8 @@ body{
 			.b-main__heading{
 				font-size: 2em;
 				line-height: 1.166em;
-				margin-bottom: 1.4em;
+				margin-bottom: 1.3em;
+				background-color: rgba(63, 63, 63, 0.75);
 			}
 
 				.b-main__navigation-link{
@@ -131,6 +186,10 @@ body{
 						text-decoration: underline;
 					}
 
+			.b-main__text{
+				background-color: rgba(63, 63, 63, 0.75);
+			}
+
 		.b-main__right-column{
 			float: right;
 			width: 33.888%;
@@ -138,13 +197,23 @@ body{
 
 			.b-main__picture{
 				display: inline-block;
-				margin-top: 50px;
+				margin-top: 45px;
 				width: 392px;
 				height: 600px;
 				background-image: url('../img/nerpa.png');
+				-webkit-background-size: contain;
+				-moz-background-size: contain;
+				-o-background-size: contain;
 				background-size: contain;
 				background-repeat: no-repeat;
 			}
+
+				@media all and (max-width: 830px){
+					.b-main__picture{
+						width: 261px;
+						height: 400px;
+						transition: 0.6s;
+				}
 
 				
 				@media (-webkit-min-device-pixel-ratio: 2){
