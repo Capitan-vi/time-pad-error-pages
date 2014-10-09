@@ -23,16 +23,26 @@ body{
 }
 
 body{
-	position: fixed;
-	max-height: 670px;
-	overflow: hidden;
-	padding-top: 20px;
+	overflow-x: hidden;
+	padding: 20px 0;
 	background-color: #3f3f3f;
 	font-family: "Helvetica Neue", Arial, sans-serif;
 	font-size: 18px;
 	line-height: 1.444em;
 	color: #fff;
 }
+
+    @media all and (min-height: 670px){
+        body{
+            position: fixed;
+        }
+    }
+
+    @media all and (max-height: 600px), all and (max-width: 480px){
+        body{
+            height: auto;
+        }
+    }
 
 
 	.strip{
@@ -59,6 +69,12 @@ body{
 				background-image: url('../img/pattern-strip@2x.png');
 			}
 		}
+
+        @media all and (max-width: 480px), all and (max-height: 320px) {
+            .strip {
+                display: none;
+            }
+        }
 
 	@-webkit-keyframes stip{
 		from { background-position: 0 50%; }
@@ -128,6 +144,12 @@ body{
 		animation: stip 10s infinite linear;
 	}
 
+		@media all and (max-width: 830px), all and (max-height: 664px) {
+			.strip_high{
+				top: 533px;
+			}
+		}
+
 
 
 
@@ -138,12 +160,25 @@ body{
 		margin: 0 auto;
 	}
 
+        .b-main:after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+
 		.b-main__left-column{
 			z-index: 3;
 			position: relative;
 			float: left;
 			width: 61.111%;
 		}
+
+         @media all and (max-width: 480px), all and (max-height: 320px) {
+            .b-main__left-column{
+                float: none;
+                width: 100%;
+            }
+        }
 
 			.b-main__link-logo{
 				display: inline-block;
@@ -171,7 +206,7 @@ body{
 				}
 
 			.b-main__heading{
-				font-size: 2em;
+				font-size: 1.9em;
 				line-height: 1.166em;
 				margin-bottom: 1.3em;
 				background-color: rgba(63, 63, 63, 0.75);
@@ -195,30 +230,38 @@ body{
 			width: 33.888%;
 		}
 
+        @media all and (max-width: 480px), all and (max-height: 320px) {
+            .b-main__right-column{
+                display: none;
+            }
+        }
+
 			.b-main__picture{
 				display: inline-block;
 				margin-top: 45px;
 				width: 392px;
 				height: 600px;
-				background-image: url('../img/nerpa.png');
+				background-image: url('../img/nerpa-policeman.png');
 				-webkit-background-size: contain;
 				-moz-background-size: contain;
 				-o-background-size: contain;
 				background-size: contain;
 				background-repeat: no-repeat;
+                transition: 0.6s;
+                transition-property: width, height;
 			}
 
-				@media all and (max-width: 830px){
+				@media all and (max-width: 830px), all and (max-height: 664px) {
 					.b-main__picture{
 						width: 261px;
 						height: 400px;
-						transition: 0.6s;
-				}
+				    }
+                }
 
 				
 				@media (-webkit-min-device-pixel-ratio: 2){
 					.b-main__picture{
-						background-image: url('../img/nerpa@2x.png');
+						background-image: url('../img/nerpa-policeman@2x.png');
 					}
 				}
 
